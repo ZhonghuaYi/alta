@@ -9,9 +9,9 @@ version   = '3.2.7'
 base      = 'Eigen'
 name      = 'Eigen v' + version
 directory = 'eigen-eigen-b30b87236a1b'
-url       = 'http://bitbucket.org/eigen/eigen/get/' + version + '.tar.gz'
+url       = 'https://gitlab.com/libeigen/eigen/-/archive/3.2.7/eigen-' + version + '.tar.gz'
 filename  = 'eigen-' + version + '.tar.gz'
-sha256    = '5a50a006f83480a31f1f9beabec9e91dad95138df19363ee73ccf57676f10405'
+sha256    = '3119570be9d245089fd723a27b8751c127f160f045bb2b385b681c27026563f1'
 obtained  = obtain.obtain(name, directory, url, filename, sha256)
 
 if obtained:

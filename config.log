@@ -1,0 +1,283 @@
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 291:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library dl... 
+scons: Configure: ".sconf_temp\conftest_0.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_0.cpp <-
+  |  |
+  |  |
+  |  |#include "dlfcn.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: Building ".sconf_temp\conftest_0.obj" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |cl /Fo.sconf_temp\conftest_0.obj /c .sconf_temp\conftest_0.cpp /TP /Zi /nologo /O2 /Ox /EHsc
+  |
+scons: Configure: (cached) no
+
+scons: Configure: Checking for C++ library rt... 
+scons: Configure: ".sconf_temp\conftest_1.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_1.cpp <-
+  |  |
+  |  |
+  |  |#include "sched.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: Building ".sconf_temp\conftest_1.obj" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |cl /Fo.sconf_temp\conftest_1.obj /c .sconf_temp\conftest_1.cpp /TP /Zi /nologo /O2 /Ox /EHsc
+  |
+scons: Configure: (cached) no
+
+scons: Configure: Checking whether 'c++11' is supported... 
+scons: Configure: ".sconf_temp\conftest_2.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_2.cpp <-
+  |  |
+  |  |#include <vector>
+  |  |#include <memory>
+  |  |
+  |  |struct A {
+  |  |   A(int a) : _a(a) {}
+  |  |   int _a;
+  |  |};
+  |  |
+  |  |int main(int argc, char* argv[]) {
+  |  |   std::shared_ptr<A> myA(new A(1));
+  |  |   std::vector<int> vec;
+  |  |   vec.assign(10, myA->_a);
+  |  |   for(auto& x : vec) {
+  |  |      x += 10;
+  |  |   }
+  |  |   return 0;
+  |  |}
+  |
+scons: Configure: ".sconf_temp\conftest_2.obj" is up to date.
+scons: Configure: The original builder output was:
+  |cl /Fo.sconf_temp\conftest_2.obj /c .sconf_temp\conftest_2.cpp /TP /Zi /nologo /O2 /Ox /EHsc
+  |
+scons: Configure: ".sconf_temp\conftest_2.exe" is up to date.
+scons: Configure: The original builder output was:
+  |link /OUT:.sconf_temp\conftest_2.exe .sconf_temp\conftest_2.obj
+  |
+scons: Configure: (cached) yes
+
+
+file D:\Third-PartPackages\CorC++\alta\external\SConscript,line 34:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for eigen3 using pkg-config... 
+scons: Configure: Building ".sconf_temp\conftest_3" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --exists 'eigen3'
+  |
+scons: Configure: (cached) no
+
+scons: Configure: Checking for C++ header file Eigen/Core... 
+scons: Configure: ".sconf_temp\conftest_4.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_4.cpp <-
+  |  |
+  |  |#include "Eigen/Core"
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp\conftest_4.obj" is up to date.
+scons: Configure: The original builder output was:
+  |cl /Fo.sconf_temp\conftest_4.obj /c .sconf_temp\conftest_4.cpp /TP /Zi /nologo /O2 /Ox /EHsc /Iexternal\build\include /Isources
+  |
+scons: Configure: (cached) yes
+
+
+file D:\Third-PartPackages\CorC++\alta\sources\plugins\data_interpolants\SConscript,line 15:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library flann... 
+scons: Configure: ".sconf_temp\conftest_5.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_5.cpp <-
+  |  |
+  |  |
+  |  |#include "flann/flann.hpp"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_5.obj /c .sconf_temp\conftest_5.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources
+conftest_5.cpp
+.sconf_temp\conftest_5.cpp(3): fatal error C1083: 无法打开包括文件: “flann/flann.hpp”: No such file or directory
+scons: Configure: no
+
+scons: Configure: Checking for C++ library None... 
+scons: Configure: ".sconf_temp\conftest_6.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_6.cpp <-
+  |  |
+  |  |
+  |  |#include "flann/flann.hpp"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_6.obj /c .sconf_temp\conftest_6.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources
+conftest_6.cpp
+.sconf_temp\conftest_6.cpp(3): fatal error C1083: 无法打开包括文件: “flann/flann.hpp”: No such file or directory
+scons: Configure: no
+
+
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 204:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ header file tinyexr/tinyexr.h... 
+scons: Configure: ".sconf_temp\conftest_7.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_7.cpp <-
+  |  |
+  |  |#include "tinyexr/tinyexr.h"
+  |  |
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_7.obj /c .sconf_temp\conftest_7.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources /Iexternal
+conftest_7.cpp
+.sconf_temp\conftest_7.cpp(2): fatal error C1083: 无法打开包括文件: “tinyexr/tinyexr.h”: No such file or directory
+scons: Configure: no
+
+
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 169:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library ceres... 
+scons: Configure: ".sconf_temp\conftest_8.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_8.cpp <-
+  |  |
+  |  |
+  |  |#include "ceres/ceres.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_8.obj /c .sconf_temp\conftest_8.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources /Iexternal\build\include\ceres\internal\miniglog
+conftest_8.cpp
+.sconf_temp\conftest_8.cpp(3): fatal error C1083: 无法打开包括文件: “ceres/ceres.h”: No such file or directory
+scons: Configure: no
+
+
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 169:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library nlopt... 
+scons: Configure: ".sconf_temp\conftest_9.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_9.cpp <-
+  |  |
+  |  |
+  |  |#include "nlopt.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_9.obj /c .sconf_temp\conftest_9.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources
+conftest_9.cpp
+.sconf_temp\conftest_9.cpp(3): fatal error C1083: 无法打开包括文件: “nlopt.h”: No such file or directory
+scons: Configure: no
+
+
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 169:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ library ipopt... 
+scons: Configure: ".sconf_temp\conftest_10.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_10.cpp <-
+  |  |
+  |  |
+  |  |#include "coin/IpTNLP.hpp"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_10.obj /c .sconf_temp\conftest_10.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources
+conftest_10.cpp
+.sconf_temp\conftest_10.cpp(3): fatal error C1083: 无法打开包括文件: “coin/IpTNLP.hpp”: No such file or directory
+scons: Configure: no
+
+
+file D:\Third-PartPackages\CorC++\alta\sources\plugins\nonlinear_fitter_eigen\SConscript,line 8:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C++ header file unsupported/Eigen/LevenbergMarquardt... 
+scons: Configure: ".sconf_temp\conftest_11.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_11.cpp <-
+  |  |
+  |  |#include "unsupported/Eigen/LevenbergMarquardt"
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp\conftest_11.obj" is up to date.
+scons: Configure: The original builder output was:
+  |cl /Fo.sconf_temp\conftest_11.obj /c .sconf_temp\conftest_11.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources /Iexternal\build\include\Eigen
+  |
+scons: Configure: (cached) yes
+
+
+file D:\Third-PartPackages\CorC++\alta\sources\plugins\rational_fitter_matlab\SConscript,line 8:
+	Configure(confdir = .sconf_temp)
+
+file D:\Third-PartPackages\CorC++\alta\SConstruct,line 169:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for python-2.7 using pkg-config... 
+scons: Configure: Building ".sconf_temp\conftest_12" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --exists 'python-2.7'
+  |
+scons: Configure: (cached) no
+
+scons: Configure: Checking for C++ library python-2.7... 
+scons: Configure: ".sconf_temp\conftest_13.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp\conftest_13.cpp <-
+  |  |
+  |  |
+  |  |#include "Python.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+cl /Fo.sconf_temp\conftest_13.obj /c .sconf_temp\conftest_13.cpp /TP /Zi /nologo /O2 /Ox /EHsc -DALTA_PLUGIN_DIRECTORY=\"/usr/local/lib/alta\" /Iexternal\build\include /Isources /Iexternal\pybind11\include
+conftest_13.cpp
+.sconf_temp\conftest_13.cpp(3): fatal error C1083: 无法打开包括文件: “Python.h”: No such file or directory
+scons: Configure: no
+
+

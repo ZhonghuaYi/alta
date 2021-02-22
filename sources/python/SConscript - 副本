@@ -1,0 +1,66 @@
+import sys
+import SCons.Errors as Errors
+
+Import('env', 'library_available')
+env = env.Clone()
+env.Prepend(LIBS = ['core'])
+
+## Add pybind path
+env.AppendUnique(CPPPATH = '#external/pybind11/include/')
+
+## Building a test function for boost::python
+##
+bp_test_source = """
+// STL and Boost includes
+#include <memory>
+#include <pybind11/pybind11.h>
+
+// ALTA includes
+#include <core/common.h>
+#include <core/ptr.h>
+#include <core/function.h>
+
+namespace py = pybind11;
+
+PYBIND11_MODULE(example, m) {
+    m.doc() = "pybind11 example plugin"; // optional module docstring
+    m.def("norm", &norm, "Compute the norm of vector 'v'", py::arg("v"));
+}
+"""
+
+def CheckBoostPython(context):
+   context.Message('Checking boost::python using small example...')
+   result = context.TryCompile(bp_test_source, '.cpp')
+   context.Result(result)
+   return result
+
+
+## Check whether Python 2.7 and boost::python are available.
+## The small example above is also checked if the two libraries are present.
+##
+build_lib = False
+if library_available(env, pkgspec='python-2.7',
+                     inc_var='PYTHON_INC', lib_var='PYTHON_DIR',
+                     lib='PYTHON_LIB', header='Python.h'):
+
+  conf = Configure(env, custom_tests = {'CheckBoostPython' : CheckBoostPython})
+  build_lib = conf.CheckBoostPython();
+  env = conf.Finish()
+
+
+## Build the python wrapper if checks are good
+##
+if build_lib:
+  env['SHLIBPREFIX']=''
+  if sys.platform == 'darwin':
+    # On Darwin, the extension would be '.dylib', but Python insists
+    # on search for '.so', so force this extension.
+    env['SHLIBSUFFIX'] = '.so'
+
+  env.Alias('python',
+            env.SharedLibrary('#build/python/alta', ['alta.cpp']))
+else:
+  env.Alias('python', [])
+#  raise Errors.BuildError(errstr = "Unable to build the Python wrapper",
+#                          filename = 'alta.cpp',
+#                          exitstatus = 1)

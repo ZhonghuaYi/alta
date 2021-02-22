@@ -62,7 +62,7 @@ def download(url, filename):
 # Uncompress the archive
 def uncompress(filename):
    if mimetypes.guess_type(filename)[1] == 'gzip':
-      tfile = tarfile.open(filename, 'r:gz')
+      tfile = tarfile.open(filename)
       tfile.extractall()
 
 # Apply a patch to some file
@@ -76,10 +76,10 @@ def obtain(name, rep, url, filename, sha256):
 
       # Try to download the file if it exist. If an error happens, return
       # False.
-      if not download(url, filename):
-         return False
+      # if not download(url, filename):
+      #    return False
 
-      check_integrity(filename, sha256)
+      # check_integrity(filename, sha256)
       uncompress(filename)
       #if os.path(filename).splitext in ['.tar', '.gz', '.tgz', '.zip']:
       #    uncompress(filename)
