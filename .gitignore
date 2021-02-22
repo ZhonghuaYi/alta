@@ -1,31 +1,31 @@
-Makefile
-*.pyc
-*.o
-*.os
-*.lo
-.deps
-*.rational
-*.errorplot
-*.gnuplot
-*.so.*
-*.so
-*.la
-*.a
-*.dylib
-*.exe
-build/
-external/build
-external/Ipopt-*
-external/ceres-solver-*
-external/eigen-*
-external/glog-*
-external/nlopt-*
-sources/build/brdf2brdf
-sources/build/brdf2data
-sources/build/brdf2gnuplot
-sources/build/brdf2moments
-sources/build/data2brdf
-sources/build/data2data
-tests/*.log
-documents/doxygen/
-.vscode/settings\.json
+# Makefile
+# *.pyc
+# *.o
+# *.os
+# *.lo
+# .deps
+# *.rational
+# *.errorplot
+# *.gnuplot
+# *.so.*
+# *.so
+# *.la
+# *.a
+# *.dylib
+# *.exe
+# build/
+# external/build
+# external/Ipopt-*
+# external/ceres-solver-*
+# external/eigen-*
+# external/glog-*
+# external/nlopt-*
+# sources/build/brdf2brdf
+# sources/build/brdf2data
+# sources/build/brdf2gnuplot
+# sources/build/brdf2moments
+# sources/build/data2brdf
+# sources/build/data2data
+# tests/*.log
+# documents/doxygen/
+# .vscode/settings\.json
